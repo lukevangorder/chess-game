@@ -14,3 +14,21 @@
   border-width: 4px;
   z-index: -1
 }
+
+.boardtile {
+  width: 80px;
+  height: 80px;
+  z-index: 0
+}
+
+.blackTile {
+  background-color: rgb(83, 83, 83);
+}
+
+.whiteTile {
+  background-color: beige;
+}
+
+.highlight {
+  background-color: red;
+}

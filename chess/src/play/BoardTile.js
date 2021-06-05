@@ -18,8 +18,13 @@ export default class BoardTile extends Component {
     }
 
     render() {
+        let colorName = `boardtile ${this.state.tileColor}`
+        if (this.state.highlighted) {
+            colorName = `boardtile highlight`
+        }
         return (
-            <div>
+            <div class={colorName}>
+                {this.state.pieceImage}
             </div>
         )
     }
