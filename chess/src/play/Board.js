@@ -44,7 +44,7 @@ export default class Board extends Component {
         // }
         // console.log(storeArray);
         return (
-            <div class='board'></div>
+            <div class='board'>{tileArray}</div>
         )
     }
 }
