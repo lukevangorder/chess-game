@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import BoardTile from './BoardTile.js'
+import BoardTile from './BoardTile.js'
 
 export default class Board extends Component {
     
@@ -15,6 +15,16 @@ export default class Board extends Component {
     }
     
     render() {
+        let tileData = this.props.tiles;
+        let tiles = Object.keys(tileData);
+        let tileArray = [];
+        for (let i=1; i<=8; i++) {
+            for (let j=1; j<=8; j++) {
+                const tile = tileData[`${i}`+`${j}`]
+                const tileProps = {key: `${i}${j}`, row: tile.row, col: tile.col, tileColor: tile.tileColor, occupied: tile.occupied, piece: tile.piece, pieceColor: tile.pieceColor, pieceImage: tile.pieceImage, active: tile.active, highlighted: tile.highlighted}
+                tileArray.push(<BoardTile {...tileProps} />)
+        }}
+
         // let piecesData = this.props.pieces;
         // let tilesData = this.props.boardTiles
         // let pieces = Object.keys(piecesData);
