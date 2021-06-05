@@ -13,8 +13,12 @@ export default class BoardTile extends Component {
             pieceColor: props.pieceColor, 
             pieceImage: props.pieceImage, 
             active: props.active, 
-            highlighted: props.highlighted
+            highlighted: props.highlighted,
         }
+    }
+
+    handleSelection = () => {
+        this.props.handleClick(this.state.pieceColor, this.state.piece, this.state.row, this.state.col)
     }
 
     render() {
@@ -23,7 +27,7 @@ export default class BoardTile extends Component {
             colorName = `boardtile highlight`
         }
         return (
-            <div class={colorName}>
+            <div class={colorName} onClick={this.handleSelection}>
                 {this.state.pieceImage}
             </div>
         )
